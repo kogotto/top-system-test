@@ -2,8 +2,8 @@
 #include <vector>
 #include <memory>
 
-#include "shape.h"
 #include "square.h"
+#include "diamond.h"
 
 using Shapes = std::vector<std::unique_ptr<Shape>>;
 
@@ -21,6 +21,8 @@ auto generateShapes() {
     result.emplace_back(std::make_unique<Square>(2));
     result.emplace_back(std::make_unique<Square>(10));
     result.emplace_back(std::make_unique<Square>(11));
+
+    result.emplace_back(std::make_unique<Diamond>(3));
 
     return result;
 }
