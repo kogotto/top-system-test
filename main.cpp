@@ -17,8 +17,10 @@ void draw(const Shapes& shapes) {
 auto generateShapes() {
     Shapes result;
 
+    result.emplace_back(std::make_unique<Square>(1));
     result.emplace_back(std::make_unique<Square>(2));
-    result.emplace_back(std::make_unique<Square>(5));
+    result.emplace_back(std::make_unique<Square>(10));
+    result.emplace_back(std::make_unique<Square>(11));
 
     return result;
 }

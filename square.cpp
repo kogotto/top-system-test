@@ -1,8 +1,16 @@
 #include "square.h"
 
 #include <iostream>
+#include <algorithm>
 
 namespace {
+
+constexpr int minSize = 2;
+constexpr int maxSize = 10;
+
+inline int fixSize(int size) {
+    return std::clamp(size, minSize, maxSize);
+}
 
 constexpr char corner = '+';
 constexpr char horizontal = '-';
@@ -41,7 +49,7 @@ void drawSquare(int size) {
 }
 
 Square::Square(int size)
-    : size(size) {}
+    : size(fixSize(size)) {}
 
 void Square::info() const {
     std::cout << "This is square with size " << size << '\n';
