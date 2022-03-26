@@ -5,6 +5,13 @@
 
 namespace {
 
+constexpr int minSize = 2;
+constexpr int maxSize = 7;
+
+inline int fixSize(int size) {
+    return std::clamp(size, minSize, maxSize);
+}
+
 constexpr char straight = '/';
 constexpr char reverse = '\\';
 
@@ -49,7 +56,7 @@ void drawBottom(int size) {
 }
 
 Diamond::Diamond(int size)
-    : size(size) {}
+    : size(fixSize(size)) {}
 
 void Diamond::info() const {
     std::cout << "This is diamond with size " << size << '\n';

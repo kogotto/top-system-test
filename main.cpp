@@ -22,7 +22,9 @@ auto generateShapes() {
     result.emplace_back(std::make_unique<Square>(10));
     result.emplace_back(std::make_unique<Square>(11));
 
+    result.emplace_back(std::make_unique<Diamond>(1));
     result.emplace_back(std::make_unique<Diamond>(3));
+    result.emplace_back(std::make_unique<Diamond>(8));
 
     return result;
 }
